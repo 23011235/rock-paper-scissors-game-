@@ -1,0 +1,41 @@
+#include <iostream>
+#include <bits/stdc++.h>
+#include <algorithm>
+using namespace std;
+
+int main()
+{
+ long long numberRou ,computerTurn ,userTurn;
+ cout << "\tRock , Paper , scissor game\n\t***************************\nselect number of rounds \n";
+  while(true){
+   cin >> numberRou;
+    if(numberRou > 0){
+        break;
+    }
+    else{
+        cout << "enter a valide number\n";
+    }
+  }
+  cout << "your turn\n\nchoose a number\n1===>rock\n2===>paper\n3===>scissor\n\n";
+  srand(time(0));
+  computerTurn = rand() % 3 + 1;
+  for (int i=1; i<=numberRou; i++ ){
+    cout << "\nRound Number :" << i << "\n*****************\n";
+    while(true){
+        cin >> userTurn;
+        if(userTurn >= 1 && userTurn <= 3){
+            break;
+        }
+        else{
+        cout << "enter a valide number\n";
+        }
+    }
+    if(userTurn == computerTurn){
+        cout << "you win this round";
+    }
+    else{
+        cout << "you lose this round";
+    }
+  }
+  return 0;
+}
